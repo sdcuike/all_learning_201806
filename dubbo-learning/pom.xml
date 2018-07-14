@@ -1,0 +1,117 @@
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	                         http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.doctor</groupId>
+        <artifactId>maven-parent-doctor</artifactId>
+        <version>2</version>
+    </parent>
+
+    <artifactId>dubbo-learning</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+
+    <description></description>
+
+    <inceptionYear>2018-07</inceptionYear>
+
+    <properties>
+        <lombok.version>1.16.16</lombok.version>
+        <org.mapstruct.version>1.2.0.Beta2</org.mapstruct.version>
+        <spring.version>5.0.7.RELEASE</spring.version>
+        <zookeeper_version>3.4.9</zookeeper_version>
+        <zkclient_version>0.2</zkclient_version>
+        <curator_version>2.12.0</curator_version>
+    </properties>
+    <!--依赖的zk curator等最好从官方pom里寻找，版本不兼容会发生，随便升级-->
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zkclient_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${curator_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>doctorwho-maven-repo</id>
+            <url>https://raw.githubusercontent.com/sdcuike/maven-repo/master/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>doctorwho-maven-repo-s</id>
+            <url>https://raw.githubusercontent.com/sdcuike/maven-repo/master/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>metaframe-repository</id>
+            <name>Metaframe Repository</name>
+            <url>http://metaframe.github.com/repo</url>
+        </repository>
+    </repositories>
+
+</project>
