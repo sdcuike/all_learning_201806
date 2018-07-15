@@ -4,6 +4,8 @@
 
 ## 统一泛化调用平台Ui
 
-[UI1](https://raw.githubusercontent.com/sdcuike/all_learning_201806/master/dubbo-learning/src/test/resources/WechatIMG1.png)
+![UI1](https://github.com/sdcuike/all_learning_201806/blob/master/dubbo-learning/src/test/resources/WechatIMG1.png?raw=true)
 
-[UI2](all_learning_201806/dubbo-learning/src/test/resources/WechatIMG2.png)
+------
+
+![UI2](https://github.com/sdcuike/all_learning_201806/blob/master/dubbo-learning/src/test/resources/WechatIMG2.png?raw=true)
