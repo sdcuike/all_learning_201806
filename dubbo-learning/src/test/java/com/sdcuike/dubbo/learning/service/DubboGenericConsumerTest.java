@@ -4,6 +4,7 @@ import com.alibaba.dubbo.rpc.service.GenericService;
 import com.sdcuike.dubbo.learning.utils.DubboGenericFactory;
 import com.sdcuike.dubbo.learning.utils.DubboGenericInvokeUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,7 +31,7 @@ public class DubboGenericConsumerTest {
 
         Object result = hystrixService.$invoke("testGenerRe", new String[]{"java.lang.String"}, new Object[]{"test"});
 
-        System.out.println(result.getClass() + " ==  " + result);
+        Assert.assertEquals("haha test", result.toString());
 
         // rpc-json格式
 
@@ -38,7 +39,7 @@ public class DubboGenericConsumerTest {
         final Object[] parameterValues = DubboGenericInvokeUtils.generateParameterValues("[\"test_test\"]");
 
         result = hystrixService.$invoke("testGenerRe", parameterTypes, parameterValues);
-        System.out.println("==" + result);
+        Assert.assertEquals("haha test", result.toString());
 
     }
 
