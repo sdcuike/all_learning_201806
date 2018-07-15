@@ -8,4 +8,4 @@
 
 ------
 
-![UI2](https://github.com/sdcuike/all_learning_201806/blob/master/dubbo-learning/src/test/resources/WechatIMG2.png?raw=true)
+![UI2](https://github.com/sdcuike/all_learning_201806/blob/master/dubbo-learning/src/test/resources/WechatIMG3.png?raw=true)
