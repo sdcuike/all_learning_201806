@@ -29,7 +29,7 @@ public class LogSqlQueryInterceptor implements QueryInterceptor {
     @Override
     public <T extends Resultset> T preProcess(Supplier<String> sql, Query interceptedQuery) {
         if (interceptedQuery != null) {
-            logger.info("sql {}", sql);
+            logger.debug("interceptedQuery : \n {}", sql);
         }
         return null;
     }

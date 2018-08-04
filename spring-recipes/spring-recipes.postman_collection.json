@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "74f8ac69-4dd6-458e-af74-50eb394afb57",
+		"name": "spring-recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/demo/test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"a\": \"dkf\"\n}"
+				},
+				"url": {
+					"raw": "{{\b\bhost}}/demo/test?sdf=sfd&a=sdfas",
+					"host": [
+						"{{\b\bhost}}"
+					],
+					"path": [
+						"demo",
+						"test"
+					],
+					"query": [
+						{
+							"key": "sdf",
+							"value": "sfd"
+						},
+						{
+							"key": "a",
+							"value": "sdfas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/demo/test/dto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"a\": \"dkf\",\n\t\"pageNo\":1,\n\t\"pageSize\":10,\n\t\"requestInfoDto\":{\n\t\t\"id\":11,\n\t\t\"address\":\"no adress\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{\b\bhost}}/demo/test/dto?a=bbb&sdf=sdf",
+					"host": [
+						"{{\b\bhost}}"
+					],
+					"path": [
+						"demo",
+						"test",
+						"dto"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "bbb"
+						},
+						{
+							"key": "sdf",
+							"value": "sdf"
+						},
+						{
+							"key": "ac",
+							"value": "dffd",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/demo/form-post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "sdfsf",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "1121",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{\b\bhost}}/demo/form-post?af=sf&ss=sdf",
+					"host": [
+						"{{\b\bhost}}"
+					],
+					"path": [
+						"demo",
+						"form-post"
+					],
+					"query": [
+						{
+							"key": "af",
+							"value": "sf"
+						},
+						{
+							"key": "ss",
+							"value": "sdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "demo/upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{\b\bhost}}/demo/upload",
+					"host": [
+						"{{\b\bhost}}"
+					],
+					"path": [
+						"demo",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jmx查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"search\",\n    \"mbean\" : \"*:*\"\n  }"
+				},
+				"url": {
+					"raw": "localhost:8788/jolokia/",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"jolokia",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jmx查询 Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"search\",\n    \"mbean\" : \"*:*\"\n  }"
+				},
+				"url": {
+					"raw": "localhost:8788/jolokia/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"jolokia",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jmx查询 Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"search\",\n    \"mbean\" : \"*:*\"\n  }"
+				},
+				"url": {
+					"raw": "localhost:8788/jolokia/",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"jolokia",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jmx查询log sql 配置",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"read\",\n    \"mbean\" : \"com.sdcuike.spring.jmx:name=logSqlMXBean,type=LogSqlMXBean\",\n    \"attribute\" : \"LogSql\"\n    \n  }"
+				},
+				"url": {
+					"raw": "localhost:8788/jolokia/",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"jolokia",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jmx 设置log sql",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"write\",\n    \"mbean\" : \"com.sdcuike.spring.jmx:name=logSqlMXBean,type=LogSqlMXBean\",\n    \"attribute\" : \"LogSql\",\n    \"value\":\"true\"\n    \n  }"
+				},
+				"url": {
+					"raw": "localhost:8788/jolokia/",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"jolokia",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
