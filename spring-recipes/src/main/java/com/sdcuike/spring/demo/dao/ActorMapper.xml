@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdcuike.spring.demo.dao.ActorMapper">
+  <resultMap id="BaseResultMap" type="actorDO">
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    actor_id, first_name, last_name, last_update
+  </sql>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List" />
+    from actor
+
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from actor
+    where actor_id = #{actorId}
+  </select>
+
+
+  <insert id="insert" parameterType="actorDO">
+    insert into actor (actor_id, first_name, last_name, 
+      last_update)
+    values (#{actorId}, #{firstName}, #{lastName},
+      #{lastUpdate})
+  </insert>
+  <insert id="insertSelective" parameterType="actorDO">
+    insert into actor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="actorId != null">
+        actor_id,
+      </if>
+      <if test="firstName != null">
+        first_name,
+      </if>
+      <if test="lastName != null">
+        last_name,
+      </if>
+      <if test="lastUpdate != null">
+        last_update,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="actorId != null">
+        #{actorId},
+      </if>
+      <if test="firstName != null">
+        #{firstName},
+      </if>
+      <if test="lastName != null">
+        #{lastName},
+      </if>
+      <if test="lastUpdate != null">
+        #{lastUpdate},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="actorDO">
+    update actor
+    <set>
+      <if test="firstName != null">
+        first_name = #{firstName},
+      </if>
+      <if test="lastName != null">
+        last_name = #{lastName},
+      </if>
+      <if test="lastUpdate != null">
+        last_update = #{lastUpdate},
+      </if>
+    </set>
+    where actor_id = #{actorId}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="actorDO">
+    update actor
+    set first_name = #{firstName},
+      last_name = #{lastName},
+      last_update = #{lastUpdate}
+    where actor_id = #{actorId}
+  </update>
+</mapper>
