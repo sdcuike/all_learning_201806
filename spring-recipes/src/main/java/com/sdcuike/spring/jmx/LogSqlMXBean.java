@@ -27,9 +27,9 @@ public class LogSqlMXBean implements ILogSqlMXBean {
         this.logSql = logSql;
 
         if (logSql) {
-            LoggerLevelUtils.setLogLevel("com.sdcuike.spring.log.db", Level.DEBUG);
+            LoggerLevelUtils.setLogLevel(LOGSQL_LOGGERNAME, Level.DEBUG);
         } else {
-            LoggerLevelUtils.setLogLevel("com.sdcuike.spring.log.db", Level.INFO);
+            LoggerLevelUtils.setLogLevel(LOGSQL_LOGGERNAME, Level.INFO);
 
         }
     }

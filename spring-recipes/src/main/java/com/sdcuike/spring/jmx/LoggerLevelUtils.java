@@ -16,8 +16,12 @@ import java.security.ProtectionDomain;
  * @date 2018/8/4
  * @since 2018/8/4
  */
-public class LoggerLevelUtils {
+class LoggerLevelUtils {
     private static final String ROOT_LOGGER_NAME = "ROOT";
+
+    private LoggerLevelUtils() {
+
+    }
 
     /**
      * 动态设置log级别
@@ -27,7 +31,7 @@ public class LoggerLevelUtils {
      * @param loggerName
      * @param level
      */
-    public static void setLogLevel(String loggerName, Level level) {
+    static void setLogLevel(String loggerName, Level level) {
         ch.qos.logback.classic.Logger logger = getLogger(loggerName);
         if (logger != null) {
             logger.setLevel(level);
