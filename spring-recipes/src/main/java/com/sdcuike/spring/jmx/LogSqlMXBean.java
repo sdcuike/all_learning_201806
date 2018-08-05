@@ -1,6 +1,7 @@
 package com.sdcuike.spring.jmx;
 
 import ch.qos.logback.classic.Level;
+import org.jolokia.jmx.JsonMBean;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
  * @since 2018/8/4
  */
 @Component
+@JsonMBean
 public class LogSqlMXBean implements ILogSqlMXBean {
 
     private volatile boolean logSql = false;
