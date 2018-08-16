@@ -4,7 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -29,6 +31,13 @@ public class LogFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         logger.info("doFilter");
 
+        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+        Cookie cookie = new Cookie("test", "SG1");
+        cookie.setDomain(".localhost.com");
+
+        cookie.setPath("/");
+        cookie.setVersion(2);
+        httpServletResponse.addCookie(cookie);
         ServletRequest servletRequest = request;
         if (!ServletRequestUtils.isBinaryContent(request) &&
                 !ServletRequestUtils.isMultipart(request) &&
