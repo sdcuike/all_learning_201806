@@ -27,7 +27,7 @@ class ContentCachingRequestWrapper extends HttpServletRequestWrapper {
     }
 
     @Override
-    public ServletInputStream getInputStream() throws IOException {
+    public ServletInputStream getInputStream() {
         final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(cachingBytes);
 
         return new ServletInputStream() {
@@ -46,7 +46,8 @@ class ContentCachingRequestWrapper extends HttpServletRequestWrapper {
                 throw new RuntimeException("no implement");
             }
 
-            public int read() throws IOException {
+            @Override
+            public int read() {
                 return byteArrayInputStream.read();
             }
         };
@@ -55,7 +56,7 @@ class ContentCachingRequestWrapper extends HttpServletRequestWrapper {
     }
 
     @Override
-    public BufferedReader getReader() throws IOException {
+    public BufferedReader getReader()  {
         return new BufferedReader(new InputStreamReader(this.getInputStream()));
     }
 

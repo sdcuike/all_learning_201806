@@ -23,7 +23,7 @@ public class LogFilter implements Filter {
 
 
     @Override
-    public void init(javax.servlet.FilterConfig filterConfig) throws ServletException {
+    public void init(javax.servlet.FilterConfig filterConfig) {
         logger.info("init");
     }
 
